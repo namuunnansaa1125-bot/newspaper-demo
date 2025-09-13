@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Newspaper Generator</title>
+  <meta property="og:title" content="Таны нэрийн утга">
+  <meta property="og:description" content="Нэрээ оруулаад сонин дээр хэрхэн гарч байгааг үзээрэй!">
+  <meta property="og:image" content="https://yourdomain.com/newspaper.jpg">
+  <meta property="og:type" content="article">
+
+  <style>
+    body { font-family:"Times New Roman",serif; background:#f4f1e1; padding:20px; text-align:center;}
+    .newspaper { background:#fff; border:1px solid #aaa; padding:20px; max-width:600px; margin:auto;
+      box-shadow:0 2px 6px rgba(0,0,0,0.3); text-align:left;}
+    .headline { font-size:28px; font-weight:bold; border-bottom:2px solid #000; margin-bottom:10px;}
+    .date { font-size:12px; color:#555; margin-bottom:10px;}
+    img { max-width:100%; margin:10px 0;}
+    .input-box { margin:20px 0;}
+  </style>
+</head>
+<body>
+  <h2>📰 Нэрээ сонин дээр үзэх</h2>
+  <div class="input-box">
+    <input type="text" id="nameInput" placeholder="Нэрээ оруулна уу">
+    <button onclick="generateNews()">Үзэх</button>
+  </div>
+
+  <div class="newspaper" id="newsBox" style="display:none;">
+    <div class="headline" id="headline">...</div>
+    <div class="date">13 - 9 - 2025 | PAGE 1</div>
+    <img src="https://yourdomain.com/newspaper.jpg" alt="Newspaper Image">
+    <p id="article">...</p>
+  </div>
+
+  <script>
+    function generateNews() {
+      const name = document.getElementById("nameInput").value || "Таны нэр";
+      document.getElementById("headline").innerText = name + " - Хүчтэй Арслан";
+      document.getElementById("article").innerText =
+        name + " бол шийдэмгий, хүчтэй хүн. Энэ нэртэй хүмүүс бусдад баяр баясал авчирдаг...";
+      document.getElementById("newsBox").style.display = "block";
+    }
+  </script>
+</body>
+</html>
